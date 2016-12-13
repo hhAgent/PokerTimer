@@ -7,5 +7,6 @@ namespace PokerTimer.DataAccess
 {
     public class tblBlindsSchedule : SQLiteConnector
     {
+
     }
 }
