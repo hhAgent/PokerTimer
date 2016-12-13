@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PokerTimer.Models
 {
-    public class BlindsSchedule
+    public class BlindsLevel
     {
         public long TournamentId { get; set; }
 
