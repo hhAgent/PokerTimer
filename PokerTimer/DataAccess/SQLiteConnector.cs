@@ -12,7 +12,7 @@ namespace PokerTimer.DataAccess
         protected static SQLiteConnection m_dbConnection;
         public static void Init()
         {
-            string databasePath = Directory.GetCurrentDirectory() + "\\poker.db";
+            string databasePath = Directory.GetCurrentDirectory() + "\\Data\\poker.db";
             m_dbConnection = new SQLiteConnection(
                 string.Format("Data Source={0};Version=3;", databasePath)
                 );
