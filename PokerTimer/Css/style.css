@@ -1,0 +1,53 @@
+﻿.bg_img
+{
+	background-color: #000000;
+	color: #fff;
+	background-image: url("/Images/bg_img.jpg");
+	background-size: cover;
+}
+.box {
+	width: 400px;
+	height: 400px;
+	position: relative;
+	margin: auto;
+	border-radius: 50%;
+	background: #000000;
+	text-align: center;
+	background-image: url("/Images/bg_center.jpg");
+}
+.box:after {
+	content: '';
+	position: absolute;
+	top: -50px;
+	bottom: -50px;
+	right: -50px;
+	left: -50px;
+	background-image: linear-gradient(to bottom left, #f2971d 0%, #4fba2c 100%);
+	z-index: -1;
+	border-radius: inherit;
+}
+.titleBlind
+{
+	font-size: 27px;
+	font-weight: bold;
+	color: #88868b;
+}
+.digitBlind
+{
+	font-size: 60px;
+	font-weight: bold;
+}
+.digitInfomation
+{
+	font-size: 40px;
+	font-weight: bold;
+}
+.bodyCenter
+{
+	position: absolute;top: 50%;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
