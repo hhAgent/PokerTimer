@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
@@ -9,13 +10,11 @@ namespace PokerTimer.DataAccess
 {
     public class SQLiteConnector
     {
-        protected static SQLiteConnection m_dbConnection;
+        protected static SQLiteConnection m_dbConnection = null;
         public static void Init()
         {
-            string databasePath = Directory.GetCurrentDirectory() + "\\Data\\poker.db3";
-            m_dbConnection = new SQLiteConnection(
-                string.Format("Data Source={0};Version=3;", databasePath)
-                );
+            string connectionString = ConfigurationManager.AppSettings["ConnectionString"].ToString();
+            m_dbConnection = new SQLiteConnection(connectionString);                
             m_dbConnection.Open();
         }
 

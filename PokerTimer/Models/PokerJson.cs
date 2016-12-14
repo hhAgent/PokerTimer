@@ -21,6 +21,8 @@ namespace PokerTimer.Models
 
         public int CurrentAnte { get; set; }
 
+        public int StartingChips { get; set; }
+
         public int NextSmallBlind { get; set; }
 
         public int NextBigBlind { get; set; }
@@ -37,11 +39,6 @@ namespace PokerTimer.Models
 
         public decimal AvgStack { get; set; }
 
-        public decimal PrizePool { get; set; }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        public decimal PrizePool { get; set; }        
     }
 }

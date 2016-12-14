@@ -6,6 +6,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using PokerTimer.DataAccess;
 
 namespace PokerTimer
 {
@@ -15,6 +16,7 @@ namespace PokerTimer
         {
             // Code that runs on application startup
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            SQLiteConnector.Init();
         }
     }
 }
