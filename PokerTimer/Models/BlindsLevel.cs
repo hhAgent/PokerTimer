@@ -13,12 +13,12 @@ namespace PokerTimer.Models
 
         public int Level { get; set; }
 
-        public decimal SmallBlind { get; set; }
+        public int SmallBlind { get; set; }
 
-        public decimal BigBlind { get; set; }
+        public int BigBlind { get; set; }
 
-        public decimal Ante { get; set; }
+        public int Ante { get; set; }
 
-        public decimal Length { get; set; }
+        public int Length { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace PokerTimer.DataAccess
                         TournamentId = long.Parse( reader["id"].ToString() ),
                         Stage = int.Parse( reader["stage"].ToString() ),
                         Level = int.Parse( reader["level"].ToString() ),
-                        Length = decimal.Parse( reader["length"].ToString() ),
+                        Length = int.Parse( reader["length"].ToString() ),
                         SmallBlind = int.Parse( reader["smallblind"].ToString() ),
                         BigBlind = int.Parse( reader["bigblind"].ToString() ),
                         Ante = int.Parse( reader["ante"].ToString() ),

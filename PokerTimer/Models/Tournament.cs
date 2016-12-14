@@ -32,5 +32,7 @@ namespace PokerTimer.Models
         public int LastStageTime { get; set; }
 
         public int LastStage { get; set; }
+
+        public bool IsStopped { get; set; }
     }
 }
