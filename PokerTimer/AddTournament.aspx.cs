@@ -119,18 +119,48 @@ namespace PokerTimer
                     tour.PrizePool = 0;
                     tour.TotalPlayers = 0;
                     tour.UpdateTime = DateTime.Now;
-                    int tourId = tblTournament.Add(tour);
+                    long tourId = tblTournament.Add(tour);
 
-                    if (totalOfLevels > 0)
+                    if (totalOfLevels > 0 && tourId != -1)
                     {
-                        BlindsLevel level = new BlindsLevel();
-                        level.Stage = 0; level.Ante = 0; level.BigBlind = 0; level.SmallBlind = 0;
-                        level.TournamentId = tour.Id;
                         int currentStage = 0;
-                        for (int i = 1; i <= totalOfLevels; i++)
+                        for (int i = 0; i < totalOfLevels; i++)
                         {
-
+                            if (i % breakAfterLevel == 0)
+                            {
+                                currentStage++;
+                                BlindsLevel breakLevel = new BlindsLevel();
+                                breakLevel.Stage = 0; breakLevel.Ante = 0; breakLevel.BigBlind = 0; breakLevel.SmallBlind = 0;
+                                breakLevel.TournamentId = tour.Id; breakLevel.Length = breakTime;
+                                tblBlindsSchedule.Add(breakLevel);
+                            }
+                            currentStage++;
+                            BlindsLevel newLevel = new BlindsLevel();
+                            newLevel.Stage = currentStage; newLevel.Ante = datas[i].Small;
+                            newLevel.BigBlind = datas[i].Big; newLevel.SmallBlind = datas[i].Ante;
+                            newLevel.TournamentId = tourId; newLevel.Length = levelTimeLength;
+                            tblBlindsSchedule.Add(newLevel);
                         }
+                        string cRefreshParent = "<script language='javascript'>" +
+                                        "  alert('Thêm tournament thành công.');</script>";
+                        string cRefreshParentKey = "RefreshParentKey";
+                        if (!this.Page.ClientScript.IsClientScriptBlockRegistered(cRefreshParentKey))
+                        {
+                            this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(),
+                            cRefreshParentKey, cRefreshParent);
+                        }
+                    }
+                    else
+                    {
+                        string cRefreshParent = "<script language='javascript'>" +
+                                        "  alert('Thêm tournament bị lỗi.');</script>";
+                        string cRefreshParentKey = "RefreshParentKey";
+                        if (!this.Page.ClientScript.IsClientScriptBlockRegistered(cRefreshParentKey))
+                        {
+                            this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(),
+                            cRefreshParentKey, cRefreshParent);
+                        }
+                        return;
                     }
                 }
             }
