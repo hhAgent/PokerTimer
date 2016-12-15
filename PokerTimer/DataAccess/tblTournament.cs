@@ -64,7 +64,7 @@ namespace PokerTimer.DataAccess
 
                         // Time info
                         IsStopped = bool.Parse(reader["isstopped"].ToString()),
-                        StartingTime = DateTime.ParseExact(reader["starttime"].ToString(), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
+                        StartingTime = DateTime.ParseExact( reader["starttime"].ToString(), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
                         UpdateTime = DateTime.ParseExact(reader["updatetime"].ToString(), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
                         LastStage = int.Parse( reader["laststage"].ToString() ),
                         LastStageTime = int.Parse( reader["laststagetime"].ToString() )
