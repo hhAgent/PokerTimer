@@ -153,7 +153,7 @@ namespace PokerTimer.DataAccess
             }
         }
 
-        public static void Add(Tournament tour)
+        public static long Add(Tournament tour)
         {
             try
             {
@@ -211,9 +211,12 @@ namespace PokerTimer.DataAccess
                 command.Parameters.AddWithValue("@laststagetime", tour.LastStageTime);
                 command.Parameters.AddWithValue("@isstopped", tour.IsStopped);
                 command.ExecuteNonQuery();
+
+                return id;
             }
             catch
             {
+                return -1;
             }
         }
     }
