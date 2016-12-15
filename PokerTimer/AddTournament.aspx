@@ -10,6 +10,7 @@
     .rwd-table {
       margin: 1em 0;
       min-width: 300px;
+      border-collapse: collapse;
     }
     .rwd-table tr {
       border-top: 1px solid #ddd;
@@ -87,14 +88,20 @@
         font-size: 15px;
     }
     .rwd-table tr {
-      border-color: #46637f;
+      border-color: #6089b1;
+    }
+    .rwd-table tr:hover {
+      background-color:#4072a5;
     }
     .rwd-table th, .rwd-table td {
       margin: .5em 1em;
     }
     @media (min-width: 480px) {
       .rwd-table th, .rwd-table td {
-        padding: 1em !important;
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
       }
     }
     .rwd-table th, .rwd-table td:before {
@@ -112,15 +119,98 @@
         width:60px;
         text-align: center;
     }
-    </style>
 
+    .myButton {
+	    -moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	    -webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	    box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	    background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	    background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	    background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	    background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	    background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	    background-color:#768d87;
+	    -moz-border-radius:5px;
+	    -webkit-border-radius:5px;
+	    border-radius:5px;
+	    border:1px solid #566963;
+	    display:block;
+        text-align:left;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Arial;
+	    font-size:15px;
+	    font-weight:bold;
+	    padding:11px 23px;
+	    text-decoration:none;
+	    text-shadow:0px -1px 0px #2b665e;
+        width: 100px;
+        text-align: center;
+    }
+    .myButton:hover {
+	    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	    background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	    background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	    background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	    background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	    background-color:#6c7c7c;
+    }
+    .myButton:active {
+	    position:relative;
+	    top:1px;
+    }
+    </style>
+    <script style="text/javascript">
+        function isInt(value) {
+            return !isNaN(value) &&
+                   parseInt(Number(value)) == value &&
+                   !isNaN(parseInt(value, 10));
+        }
+
+        function validateTotalOfLevels()
+        {
+            var data = document.getElementById("txtTotalOfLevels").value;
+            if (!isInt(data)) 
+            {
+                alert("Tổng level không phải là số");
+                document.getElementById("txtTotalOfLevels").value = "";
+                document.getElementById("txtTotalOfLevels").focus();
+                return;
+            }
+            var value = parseInt(data, 10);
+            if (value < 0 || value > 50)
+            {
+                alert("Giá trị tổng level trong khoảng [0, 50]");
+                document.getElementById("txtTotalOfLevels").focus();
+                return;
+            }
+            document.getElementById("blind-schedule-content").innerHTML = "";
+            var i;
+            for (i = 0; i < value; i++)
+            {
+                document.getElementById("blind-schedule-content").innerHTML += '<td>' + (i + 1) +
+                    '</td><td><input name="small_' + i + '" id="small_' + i + '" value="5000"/></td><td><input name="big_' + i + '" id="big_' + i + '" value="10000"/></td><td><input name="ante_' + i + '" id="ante_' + i + '" value="1000"/></td><td name="length_' + i + '" id="length_' + i + '">6</td>';
+            }
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
+    <center>
+    
     <div>
         <table style="text-align:center;">
             <tr>
-                <td>
+                <td colspan="2">
+                    <asp:Button CssClass="myButton" runat="server" ID="btnSubmit" Text="Submit"/>
+                </td>
+            </tr>
+            <tr>
+                <td>                
                     <div>General Infomation</div>
                     <table class="rwd-table">
                         <tr>
@@ -149,7 +239,7 @@
                         </tr>
                         <tr>
                             <td>Level time length</td>
-                            <td><asp:TextBox ID="txtLevelTimeLength" runat="server"></asp:TextBox></td>
+                            <td><asp:TextBox ID="txtLevelTimeLength" runat="server"></asp:TextBox> &nbsp;minutes</td>
                         </tr>
                         <tr>
                             <td>Break after</td>
@@ -163,7 +253,7 @@
                 </td>
                 <td>
                     <div>Blind Schedule</div>
-                    <table class="rwd-table" id="blind-schedule">
+                    <table class="rwd-table" id="blind-schedule" style="margin-left: 20px;">
                         <tr>
                             <th>Level</th>
                             <th>Small</th>
@@ -171,18 +261,14 @@
                             <th>Ante</th>
                             <th>Length</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><input value="5000"/></td>
-                            <td><input value="10000"/></td>
-                            <td><input value="1000"/></td>
-                            <td>6</td>
-                        </tr>
+                        <tbody id="blind-schedule-content">
+                        </tbody>
                     </table>
                 </td>
             </tr>
         </table>
     </div>
+    </center>
     </form>
 </body>
 </html>
