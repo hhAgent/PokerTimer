@@ -142,7 +142,7 @@ namespace PokerTimer.DataAccess
                 command.Parameters.AddWithValue("@laststage", tour.LastStage);
                 command.Parameters.AddWithValue("@laststagetime", tour.LastStageTime);
                 command.Parameters.AddWithValue("@starttime", tour.StartingTime);
-                command.Parameters.AddWithValue("@isstopped", tour.IsStopped);
+                command.Parameters.AddWithValue("@isstopped", tour.IsStopped ? "True" : "False" );
                 command.Parameters.AddWithValue("@id", tour.Id);
 
                 return command.ExecuteNonQuery();
@@ -209,7 +209,7 @@ namespace PokerTimer.DataAccess
                 command.Parameters.AddWithValue("@starttime", tour.StartingTime.ToString("yyyy-MM-dd HH:mm:ss"));
                 command.Parameters.AddWithValue("@laststage", tour.LastStage);
                 command.Parameters.AddWithValue("@laststagetime", tour.LastStageTime);
-                command.Parameters.AddWithValue("@isstopped", tour.IsStopped);
+                command.Parameters.AddWithValue("@isstopped", tour.IsStopped ? "True" : "False" );
                 command.ExecuteNonQuery();
 
                 return id;
