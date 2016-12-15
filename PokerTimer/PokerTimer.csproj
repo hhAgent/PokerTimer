@@ -102,6 +102,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddTournament.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="Css\menu.css" />
     <Content Include="Css\style.css" />
     <Content Include="Global.asax" />
     <Content Include="header.html" />
@@ -114,6 +116,7 @@
     <Content Include="Images\rightLogo.png" />
     <Content Include="Index.aspx" />
     <Content Include="ListTour.aspx" />
+    <Content Include="Menu.aspx" />
     <Content Include="Monaco.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -124,6 +127,13 @@
     </Compile>
     <Compile Include="AddTournament.aspx.designer.cs">
       <DependentUpon>AddTournament.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MonacoController.cs" />
@@ -146,6 +156,13 @@
     </Compile>
     <Compile Include="ListTour.aspx.designer.cs">
       <DependentUpon>ListTour.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\BlindsLevel.cs" />
     <Compile Include="Models\PokerJson.cs" />

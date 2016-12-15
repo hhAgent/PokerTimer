@@ -18,21 +18,7 @@ namespace PokerTimer
         public void BindData()
         {
             var listTour = tblTournament.GetAllTournament();
-            string html = string.Empty;
-
-            listTour.Add(new Models.Tournament()
-            {
-                Id = 1234,
-                Name = "Saturday Deepstack",
-                StartingTime = new DateTime(2016, 12, 15, 14, 20, 00)
-            });
-
-            listTour.Add(new Models.Tournament()
-            {
-                Id = 6789,
-                Name = "Sunday Meat Grinder",
-                StartingTime = new DateTime(2016, 12, 15, 16, 20, 00)
-            });
+            string html = string.Empty;            
 
             for (int i = 0; i < listTour.Count; i++)
             {
