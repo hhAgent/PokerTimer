@@ -194,7 +194,7 @@ namespace PokerTimer.DataAccess
                 SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
 
                 // General Info
-                command.Parameters.AddWithValue("@id", tour.Id);
+                command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@name", tour.Name);                
                 command.Parameters.AddWithValue("@rebuy", tour.Rebuy);
                 command.Parameters.AddWithValue("@addon", tour.Addon);
