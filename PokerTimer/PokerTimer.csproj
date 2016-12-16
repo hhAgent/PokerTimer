@@ -101,12 +101,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddTournament.aspx" />
+    <Content Include="Modules\AddTournament.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Css\menu.css" />
     <Content Include="Css\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="header.html" />
+    <Content Include="Modules\header.html" />
     <Content Include="Images\bar.png" />
     <Content Include="Images\bg_banner.png" />
     <Content Include="Images\bg_center.jpg" />
@@ -114,18 +114,18 @@
     <Content Include="Images\Logo.png" />
     <Content Include="Images\pokerheaderbanner_refined.jpg" />
     <Content Include="Images\rightLogo.png" />
-    <Content Include="Index.aspx" />
-    <Content Include="ListTour.aspx" />
-    <Content Include="Menu.aspx" />
-    <Content Include="Monaco.aspx" />
+    <Content Include="TournamentPage.aspx" />
+    <Content Include="Modules\ListTour.aspx" />
+    <Content Include="Modules\Menu.aspx" />
+    <Content Include="Modules\Monaco.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddTournament.aspx.cs">
+    <Compile Include="Modules\AddTournament.aspx.cs">
       <DependentUpon>AddTournament.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddTournament.aspx.designer.cs">
+    <Compile Include="Modules\AddTournament.aspx.designer.cs">
       <DependentUpon>AddTournament.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin.aspx.cs">
@@ -143,35 +143,35 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="TournamentPage.aspx.cs">
+      <DependentUpon>TournamentPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="TournamentPage.aspx.designer.cs">
+      <DependentUpon>TournamentPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListTour.aspx.cs">
+    <Compile Include="Modules\ListTour.aspx.cs">
       <DependentUpon>ListTour.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListTour.aspx.designer.cs">
+    <Compile Include="Modules\ListTour.aspx.designer.cs">
       <DependentUpon>ListTour.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Menu.aspx.cs">
+    <Compile Include="Modules\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Menu.aspx.designer.cs">
+    <Compile Include="Modules\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\BlindsLevel.cs" />
     <Compile Include="Models\PokerJson.cs" />
     <Compile Include="Models\Tournament.cs" />
-    <Compile Include="Monaco.aspx.cs">
+    <Compile Include="Modules\Monaco.aspx.cs">
       <DependentUpon>Monaco.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Monaco.aspx.designer.cs">
+    <Compile Include="Modules\Monaco.aspx.designer.cs">
       <DependentUpon>Monaco.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

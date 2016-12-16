@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="PokerTimer.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TournamentPage.aspx.cs" Inherits="PokerTimer.TournamentPage" %>
 
 <!DOCTYPE html>
 

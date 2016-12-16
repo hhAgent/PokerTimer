@@ -13,6 +13,12 @@
             padding-top: 30px;
         }
     </style>
+    <script>
+        function GetTournament(id)
+        {
+            window.top.location = "../TournamentPage.aspx?id=" + id;
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">

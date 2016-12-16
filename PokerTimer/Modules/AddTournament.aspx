@@ -188,12 +188,12 @@
                 document.getElementById("txtTotalOfLevels").focus();
                 return;
             }
-            document.getElementById("blind-schedule-content").innerHTML = "";
+            document.getElementById("blindScheduleContent").innerHTML = "";
             var i;
             for (i = 0; i < value; i++)
             {
-                document.getElementById("blind-schedule-content").innerHTML += '<td>' + (i + 1) +
-                    '</td><td><input name="small_' + i + '" id="small_' + i + '" value="5000"/></td><td><input name="big_' + i + '" id="big_' + i + '" value="10000"/></td><td><input name="ante_' + i + '" id="ante_' + i + '" value="1000"/></td><td name="length_' + i + '" id="length_' + i + '">6</td>';
+                document.getElementById("blindScheduleContent").innerHTML += '<tr><td>' + (i + 1) +
+                    '</td><td><input name="small_' + i + '" id="small_' + i + '" value="5000"/></td><td><input name="big_' + i + '" id="big_' + i + '" value="10000"/></td><td><input name="ante_' + i + '" id="ante_' + i + '" value="1000"/></td><td name="length_' + i + '" id="length_' + i + '">6</td></tr>';
             }
         }
     </script>
@@ -261,7 +261,7 @@
                             <th>Ante</th>
                             <th>Length</th>
                         </tr>
-                        <tbody id="blind-schedule-content">
+                        <tbody id="blindScheduleContent" runat="server">
                         </tbody>
                     </table>
                 </td>

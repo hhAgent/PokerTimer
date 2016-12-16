@@ -10,6 +10,7 @@
 namespace PokerTimer {
     
     
-    public partial class Index {
+    public partial class TournamentPage
+    {
     }
 }

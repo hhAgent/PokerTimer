@@ -83,6 +83,7 @@ namespace PokerTimer
                 if (!GetInt("txtBreakLevelRange", form, ref breakAfterLevel)) errorMsg = "Break after level rỗng hoặc không phải là số";
                 if (!GetInt("txtBreakTime", form, ref breakTime)) errorMsg = "BreakTime rỗng hoặc không phải là số";
                 BlindData[] datas = new BlindData[totalOfLevels];
+                blindScheduleContent.InnerHtml = string.Empty;
                 for (int i = 0; i < totalOfLevels; i++)
                 {
                     datas[i] = new BlindData();
@@ -91,6 +92,7 @@ namespace PokerTimer
                     if (!GetInt("big_" + i.ToString(), form, ref big)) errorMsg = string.Format("Tham số Big (Level {0}) rỗng hoặc không phải là số", i + 1);
                     if (!GetInt("ante_" + i.ToString(), form, ref ante)) errorMsg = string.Format("Tham số Ante (Level {0}) rỗng hoặc không phải là số", i + 1);
                     datas[i].Small = small; datas[i].Big = big; datas[i].Ante = ante;
+                    blindScheduleContent.InnerHtml += string.Format("<tr><td>{5}</td><td><input name=\"small_{0}\" id=\"small_{0}\" value=\"{1}\"/></td><td><input name=\"big_{0}\" id=\"big_{0}\" value=\"{2}\"/></td><td><input name=\"ante_{0}\" id=\"ante_{0}\" value=\"{3}\"/></td><td name=\"length_{0}\" id=\"length_{0}\">{4}</td></tr>", i, form["small_" + i.ToString()], form["big_" + i.ToString()], form["ante_" + i.ToString()], levelTimeLength, i+1);
                 }
                 if (!string.IsNullOrEmpty(errorMsg))
                 {
