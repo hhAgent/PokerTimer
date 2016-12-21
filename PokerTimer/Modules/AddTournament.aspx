@@ -75,7 +75,7 @@
     }
 
     .rwd-table {
-      background: #34495E;
+      background: #ce4c4a;
       color: #fff;
       border-radius: .4em;
       overflow: hidden;
@@ -91,7 +91,7 @@
       border-color: #6089b1;
     }
     .rwd-table tr:hover {
-      background-color:#4072a5;
+      background-color:#e26f84;
     }
     .rwd-table th, .rwd-table td {
       margin: .5em 1em;
